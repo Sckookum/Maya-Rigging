@@ -1,0 +1,13 @@
+//Create the joint chain and assign names to them
+select -d;
+joint -p 0 0 0 -name hipJoint;
+joint -p 2 0 0 -name kneeJoint;
+joint -e -zso -oj xyz -sao yup hipJoint;
+joint -p 4 0 0 -name heelJoint;
+joint -e -zso -oj xyz -sao yup kneeJoint;
+
+//with the joints created and labled, let's stamp the ik handle by assigning 
+//the points from the hipJoint to the heelJoint.
+select -r hipJoint.rotatePivot ;
+select -add heelJoint.rotatePivot ;
+ikHandle -sol ikRPsolver;
