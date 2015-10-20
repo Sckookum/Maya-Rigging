@@ -6,8 +6,19 @@ joint -e -zso -oj xyz -sao yup hipJoint;
 joint -p 4 0 0 -name heelJoint;
 joint -e -zso -oj xyz -sao yup kneeJoint;
 
-//with the joints created and labled, let's stamp the ik handle by assigning 
-//the points from the hipJoint to the heelJoint.
+//select the joints and assign an ikhandle to them.
 select -r hipJoint.rotatePivot ;
 select -add heelJoint.rotatePivot ;
-ikHandle -sol ikRPsolver;
+ikHandle -sol ikRPsolver -name legIKhandle;
+
+//Create two Controls; Name them appropiately; snap them both ends of the joint;
+//parent the controls to the appropriate joint.
+//circle -ch on -o on -nr 0 1 0 -name hipCtrl;
+circle -ch on -o on -nr 0 1 0 -name heelCtrl;
+
+//select -r hipJoint; select -add hipCtrl;
+// delete `pointConstraint -offset 0 0 0 -weight 1`;
+ select -r heelJoint; select -add heelCtrl; 
+ delete `pointConstraint -offset 0 0 0 -weight 1`;
+ select -r heelCtrl; select -add legIKhandle;
+ parentConstraint -mo -weight 1;
