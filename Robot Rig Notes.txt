@@ -1,0 +1,19 @@
+1.06 - Missed parenting the Ik feet controls to the feet, fixed that
+
+1.05 - Small efficiency change to arms, restructuring, file cleanup, hierarchy and binding rebuilt
+
+1.04 - Hierarchy changes
+
+1.03 - Usability tweaks
+
+1.02 - Rotate order change on hands, should be harder to gimbal lock. Let me know if you still run into gimbal issues
+
+1.01 - Parenting issue on Ik legs fixed
+
+Version 1.0
+
+Just a few things about the current version of the rig-
+
+Nearly everything is now animatable and will move exactly as it moves now in all of the future versions of the rig. The current exceptions to this are: The bottom neck control translates a bit when rotated, that will be fixed. The hands turn to a weird angle when rotated far enough. The current arm solution is a little slow and doesn't bend exactly as I'd like, so that will change slightly, but should animate the same way.The ikfk switch on the legs and the arm parentage on the arms should be decided and used on one setting throughout a scene, since I haven't written a matching script for either of them, but they can be blended manually if needed. 
+
+Otherwise, this is ready to go for both test animations and full scene animations. Make sure to reference in the Robot Rig file to a new maya scene, so that the updates can be applied to it - otherwise anything created will be unusable as we make progress.
