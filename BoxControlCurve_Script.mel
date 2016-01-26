@@ -1,8 +1,0 @@
-//create box curve
-string $boxCrv = `curve -d 1 -p 1 0 1 -p 1 1 1 -p 0 1 1 -p 0 0 1 -p 0 0 0.00619361 -p 0 1 0 -p 0 1 1 -p 1 1 1 -p 1 1 0 -p 0 1 0 -p 0 0 0.00619361 -p 1 0 0 -p 1 1 0 -p 1 0 0 -p 1 0 1 -p 0 0 1 -k 0 -k 1 -k 2 -k 3 -k 4 -k 5 -k 6 -k 7 -k 8 -k 9 -k 10 -k 11 -k 12 -k 13 -k 14 -k 15`;
-//rename box control curve
-string $rnmboxCrv = `rename  "cc_BoxCurve01"`;
-//Freeze transformations of box control curve
-string $freBCC = `makeIdentity -t true -r true -s true`;
-//center the pivot point to the middle of the ctrl crv
-CenterPivot;

@@ -1,6 +1,0 @@
-//[] will make it an array.
-string $slection[];
-$selection = `ls -sl`;
-//the ls command normally returns the names of all objects in the scene.
-//the -sl command makes sure the command only returns the objects that have been selected
-//
